@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Loja de Roupas</title>
@@ -7,51 +8,18 @@
 
 <body>
 
-    <h1>Cadastro de Produto</h1>
+    <h1>Loja de Roupas</h1>
 
-    <input type="text" id="nome" placeholder="Nome do produto">
+    <input id="nome" placeholder="Nome do produto">
 
-    <button onclick="salvar()">Salvar</button>
+    <button onclick="salvar()">
+        Salvar
+    </button>
 
     <p id="mensagem"></p>
 
-    <script>
-        const SUPABASE_URL = "COLE_AQUI_SUA_URL";
-        const SUPABASE_KEY = "COLE_AQUI_SUA_ANON_KEY";
-
-        async function salvar() {
-
-            const nome = document.getElementById("nome").value;
-
-            const resposta = await fetch(
-                SUPABASE_URL + "/rest/v1/produtos",
-                {
-                    method: "POST",
-
-                    headers: {
-                        "apikey": SUPABASE_KEY,
-                        "Authorization": "Bearer " + SUPABASE_KEY,
-                        "Content-Type": "application/json",
-                        "Prefer": "return=minimal"
-                    },
-
-                    body: JSON.stringify({
-                        nome: nome
-                    })
-                }
-            );
-
-            if (resposta.ok) {
-                document.getElementById("mensagem").innerText =
-                    "Produto salvo!";
-                
-                document.getElementById("nome").value = "";
-            } else {
-                document.getElementById("mensagem").innerText =
-                    "Erro ao salvar produto.";
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
