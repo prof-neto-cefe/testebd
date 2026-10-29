@@ -1,6 +1,6 @@
-const URL = "https://uqqbqsrldydbuiimzyfk.supabase.co";
+const URL = "https://vyfncpcxqfcusdympvej.supabase.co";
 
-const KEY = "sb_publishable_k7qTjmFn6lgEWpxUXgLL3A_M2T8ZlJX";
+const KEY = "sb_publishable_D63BdC1J4LS6sqr48Li58g_n2L_wnZp";
 
 
 // SALVAR PRODUTO
@@ -74,7 +74,7 @@ async function listarProdutos() {
         const item = document.createElement("li");
 
         item.innerText =
-            produto.id + " - " + produto.nome + produto.preco;
+            produto.id + " - " + produto.nome + " " + produto.preco + "  " + produto.descricao;
 
         lista.appendChild(item);
 
